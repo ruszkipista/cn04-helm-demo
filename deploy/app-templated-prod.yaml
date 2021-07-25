@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-deployment-prod-templated
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+
+  source:
+    ## change the source of manifests to a Helm chart
+    helm:
+      ## define the input values file
+      valueFiles:
+      - values-prod.yaml
+    ## set the path to the folder where the Helm chart is stored
+    path: deploy/
+    ## set the base repository that contains the Helm chart
+    repoURL: https://github.com/ruszkipista/cn04-helm-demo
+    targetRevision: HEAD
+
+  syncPolicy: {}
