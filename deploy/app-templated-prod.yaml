@@ -16,7 +16,7 @@ spec:
       valueFiles:
       - values-prod.yaml
     ## set the path to the folder where the Helm chart is stored
-    path: deploy/
+    path: deploy
     ## set the base repository that contains the Helm chart
     repoURL: https://github.com/ruszkipista/cn04-helm-demo
     targetRevision: HEAD
