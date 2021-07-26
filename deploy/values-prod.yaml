@@ -1,7 +1,5 @@
 namespace:
   name: prod 
-
-replicaCount: 3
  
 image:
   repository: nginx 
